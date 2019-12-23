@@ -1,0 +1,41 @@
+    public WsYwCustomerEvaluatePicture(List<String> pictures,String orderNo) {
+        this.pictureOne = pictures.get(0);
+        this.pictureTwo = pictures.get(1);
+        this.pictureThree = pictures.get(2);
+        this.pictureFour = pictures.get(3);
+        this.pictureFive = pictures.get(4);
+        this.pictureSix = pictures.get(5);
+        this.orderNo = orderNo;
+    }
+		
+	福惠宝商城评论：按照淘宝的逻辑是一个商品对应一个评论，一个订单下可能有多个商品，为了解决效率的问题，直接返回给用户评论成功的信息，
+	但是暂时不显示商品下的评论内容，商品下的评论内容在审核通过后再去更改数据库的状态。
+	没有必要搞太多的类和提示。
+	问题：当每个商品都对应图片后 上传的时候是统一上传 无法动态获取fileList列表 只能手动添加清除
+	在子组件中 给每一个图片上传的组件一个sku标识
+	85655
+	
+	开启新线程检测评论内容
+	在商品详情页面显示合格的评论的文字与图片
+	
+	只有文字与图片全部通过显示时 才会通过 图片需要人工检测 文字不需要 显示评论时 选取通过检测 或检测通过的字段
+	
+	显示评论的页面 显示所有评论中的图片 拿到数据库中通过审核的字段
+	
+	分辨评论的页面
+	前端通过url预览图片
+	大图与小图路径要放到一个对象里一起传过来 以便区分
+	理清前端逻辑
+	代码越来越规范
+	文件上传之前压缩 不要 afterread之后压缩 整体压缩不要一张一张压缩
+	
+	更改redis清缓存的逻辑 不要全部删掉
+	测商城 写述职报告 看多线程 测试
+	git 工作区 暂存区 版本库分支 远程版本库
+	
+	
+	git理解：工作时在本地创建一个分支，将所有的操作都提交到这个分支上。需要的时候再将当前分支合并到master，在需要的时候push到远程仓库，本地无论如何提交不会对其他人造成影响，只需保证自己的分支。
+	分支合并后可将分支删除。
+	
+	事务 多线程 锁
+	
